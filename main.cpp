@@ -1,6 +1,6 @@
 #include <iostream>
 #include "bridge/bri/bridge.h"
-#include "userin/userin.h"
+#include "userin/in/userin.h"
 
 int main() {
     user::getInput();
