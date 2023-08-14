@@ -9,11 +9,14 @@ namespace user {
 
     inputType check(char input) {
         switch (input) {
-            case 'a':
+            case 'd':
                 return inputType::A_JUMP_RIGHT;
 
-            case 'd':
+            case 'a':
                 return inputType::D_JUMP_LEFT;
+
+            case 'q':
+                return inputType::QUIT_GAME;
 
             default:
                 return inputType::ERROR_INPUT;

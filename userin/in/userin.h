@@ -10,6 +10,7 @@ namespace user{
     enum class inputType{
         A_JUMP_RIGHT,
         D_JUMP_LEFT,
+        QUIT_GAME,
         ERROR_INPUT,
     };
 
