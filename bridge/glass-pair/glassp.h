@@ -5,6 +5,7 @@
 #define GLASSY_BRIDGE_G_GLASSP_H
 #include <utility>
 #include <random>
+#include "../../RANDOM.h"
 
 namespace gb {
 
@@ -22,20 +23,25 @@ namespace gb {
         };
 
         GlassPair() {
-
+            shuffle();
         }
+        void shuffle();
 
-        friend void shuffle();
     private:
 
 
         std::pair<GlassType, GlassType> m_gp{};
     };
 
-    inline std::uniform_int_distribution generator(static_cast<int>(GlassPair::GlassType::MIN)+1,
-                                                   static_cast<int>(GlassPair::GlassType::MAX)-1);
-    void shuffle() {
-        generator
+    inline std::uniform_int_distribution GlassTypeG(static_cast<int>(GlassPair::GlassType::MIN)+1,
+                                                    static_cast<int>(GlassPair::GlassType::MAX)-1);
+    void GlassPair::shuffle() {
+        GlassType gt{static_cast<GlassType>(GlassTypeG(random::mt))};
+        m_gp.first = gt;
+        if(gt == GlassType::STRONG)
+            m_gp.second = GlassType::FLIMSY;
+        else
+            m_gp.second = GlassType::STRONG;
     }
 }
 #endif //GLASSY_BRIDGE_G_GLASSP_H
