@@ -6,14 +6,12 @@
 #include <utility>
 #include <random>
 #include "../../RANDOM.h"
+#include <iostream>
 
 namespace gb {
 
-
-
     class GlassPair {
     public:
-
 
         enum class GlassType {
             MIN,
@@ -25,23 +23,13 @@ namespace gb {
         GlassPair() {
             shuffle();
         }
-        void shuffle();
+
+        friend std::ostream& operator<<(std::ostream& out, GlassPair&);
 
     private:
-
-
+        void shuffle();
         std::pair<GlassType, GlassType> m_gp{};
     };
 
-    inline std::uniform_int_distribution GlassTypeG(static_cast<int>(GlassPair::GlassType::MIN)+1,
-                                                    static_cast<int>(GlassPair::GlassType::MAX)-1);
-    void GlassPair::shuffle() {
-        GlassType gt{static_cast<GlassType>(GlassTypeG(random::mt))};
-        m_gp.first = gt;
-        if(gt == GlassType::STRONG)
-            m_gp.second = GlassType::FLIMSY;
-        else
-            m_gp.second = GlassType::STRONG;
-    }
 }
 #endif //GLASSY_BRIDGE_G_GLASSP_H
