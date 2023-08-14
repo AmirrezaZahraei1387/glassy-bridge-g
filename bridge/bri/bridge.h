@@ -11,13 +11,17 @@
 
 
 namespace gb {
+    struct PointBridge{
+        int glassPairNumber{};
+        GlassPair::WhichGlass which{};
+    };
 
     class Bridge {
 
     public:
 
         Bridge() = default;
-
+        GlassPair::GlassType checkGlass();
 
     private:
         std::array<GlassPair, info::BRIDGE_SIZE_LENGTH> bridge{

@@ -12,6 +12,10 @@ namespace gb {
 
     class GlassPair {
     public:
+        enum class WhichGlass{
+            first,
+            second,
+            };
 
         enum class GlassType {
             MIN,
