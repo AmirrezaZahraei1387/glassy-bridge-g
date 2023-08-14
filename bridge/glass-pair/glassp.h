@@ -4,6 +4,7 @@
 #ifndef GLASSY_BRIDGE_G_GLASSP_H
 #define GLASSY_BRIDGE_G_GLASSP_H
 #include <utility>
+#include <random>
 
 class GlassPair{
 public:
@@ -13,11 +14,12 @@ public:
         FLIMSY,
     };
 
-    GlassPair() = default;
+    GlassPair(){
+
+    }
 
 private:
     std::pair<GlassType, GlassType> m_gp{};
 };
-
 
 #endif //GLASSY_BRIDGE_G_GLASSP_H
