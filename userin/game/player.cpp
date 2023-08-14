@@ -25,4 +25,20 @@ namespace user{
         }
     }
 
+    Player::Status Player::check() {
+
+        // it means that the player have already passed the way
+        if (m_currPoint.glassPairNumber >= info::BRIDGE_SIZE_LENGTH)
+            return Status::WIN;
+
+        // meaning the glass can not hold the player
+        if (m_bridge.checkGlass(m_currPoint) == gb::GlassPair::GlassType::FLIMSY) {
+            m_live -= 1;
+            if (m_live <= 0)
+                return Status::DIE;
+            return Status::FAIL;
+        }
+
+        return Status::PASS;
+    }
 }

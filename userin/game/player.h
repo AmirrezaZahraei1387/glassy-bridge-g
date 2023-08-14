@@ -12,18 +12,24 @@
 namespace user{
 
     class Player{
-
     public:
+
+        enum class Status{
+            WIN,
+            FAIL,
+            DIE,
+            PASS,
+        };
 
         explicit Player(gb::Bridge& bridge):m_bridge{bridge}{};
         void move(user::inputType input);
-
+        Status check();
         friend class gb::Bridge;
     private:
 
         gb::Bridge::PointBridge m_currPoint{-1};
         gb::Bridge& m_bridge;
-        int live{info::NUMBER_USER_PLAY};
+        int m_live{info::NUMBER_USER_PLAY};
     };
 
 }
