@@ -3,4 +3,4 @@ project(glassy_bridge_g)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(glassy_bridge_g main.cpp info.h)
+add_executable(glassy_bridge_g main.cpp info.h bridge/glass-pair/glassp.h)
