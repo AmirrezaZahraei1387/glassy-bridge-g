@@ -7,7 +7,7 @@
 
 namespace info{
 
-    inline constexpr int BRIDGE_SIZE_LENGTH{20};
+    inline constexpr int BRIDGE_SIZE_LENGTH{10};
     inline constexpr int NUMBER_USER_PLAY{5};
 }
 #endif //GLASSY_BRIDGE_G_INFO_H

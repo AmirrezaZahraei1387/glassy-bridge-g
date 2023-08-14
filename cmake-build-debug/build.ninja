@@ -61,6 +61,12 @@ build CMakeFiles/glassy_bridge_g.dir/bridge/glass-pair/glassp.cpp.obj: CXX_COMPI
   OBJECT_DIR = CMakeFiles\glassy_bridge_g.dir
   OBJECT_FILE_DIR = CMakeFiles\glassy_bridge_g.dir\bridge\glass-pair
 
+build CMakeFiles/glassy_bridge_g.dir/bridge/bri/bridge.cpp.obj: CXX_COMPILER__glassy_bridge_g_Debug E$:/Github-Repos/glassy-bridge-g/bridge/bri/bridge.cpp || cmake_object_order_depends_target_glassy_bridge_g
+  DEP_FILE = CMakeFiles\glassy_bridge_g.dir\bridge\bri\bridge.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\glassy_bridge_g.dir
+  OBJECT_FILE_DIR = CMakeFiles\glassy_bridge_g.dir\bridge\bri
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target glassy_bridge_g
@@ -69,7 +75,7 @@ build CMakeFiles/glassy_bridge_g.dir/bridge/glass-pair/glassp.cpp.obj: CXX_COMPI
 #############################################
 # Link the executable glassy_bridge_g.exe
 
-build glassy_bridge_g.exe: CXX_EXECUTABLE_LINKER__glassy_bridge_g_Debug CMakeFiles/glassy_bridge_g.dir/main.cpp.obj CMakeFiles/glassy_bridge_g.dir/bridge/glass-pair/glassp.cpp.obj
+build glassy_bridge_g.exe: CXX_EXECUTABLE_LINKER__glassy_bridge_g_Debug CMakeFiles/glassy_bridge_g.dir/main.cpp.obj CMakeFiles/glassy_bridge_g.dir/bridge/glass-pair/glassp.cpp.obj CMakeFiles/glassy_bridge_g.dir/bridge/bri/bridge.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\glassy_bridge_g.dir
