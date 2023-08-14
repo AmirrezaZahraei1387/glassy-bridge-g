@@ -6,20 +6,36 @@
 #include <utility>
 #include <random>
 
-class GlassPair{
-public:
+namespace gb {
 
-    enum class GlassType{
-        STRONG,
-        FLIMSY,
+
+
+    class GlassPair {
+    public:
+
+
+        enum class GlassType {
+            MIN,
+            STRONG,
+            FLIMSY,
+            MAX,
+        };
+
+        GlassPair() {
+
+        }
+
+        friend void shuffle();
+    private:
+
+
+        std::pair<GlassType, GlassType> m_gp{};
     };
 
-    GlassPair(){
-
+    inline std::uniform_int_distribution generator(static_cast<int>(GlassPair::GlassType::MIN)+1,
+                                                   static_cast<int>(GlassPair::GlassType::MAX)-1);
+    void shuffle() {
+        generator
     }
-
-private:
-    std::pair<GlassType, GlassType> m_gp{};
-};
-
+}
 #endif //GLASSY_BRIDGE_G_GLASSP_H
