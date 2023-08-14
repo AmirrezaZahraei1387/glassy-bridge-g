@@ -38,3 +38,7 @@
 725	864	7137559174664193	glassy_bridge_g.exe	1e4a07bdc69c90b1
 4	561	7137559590780306	CMakeFiles/glassy_bridge_g.dir/userin/in/userin.cpp.obj	a76b769c43ac2664
 562	710	7137559592150049	glassy_bridge_g.exe	1e4a07bdc69c90b1
+11	723	7137561916942280	CMakeFiles/glassy_bridge_g.dir/bridge/bri/bridge.cpp.obj	5d174ac981312830
+19	743	7137561917143870	CMakeFiles/glassy_bridge_g.dir/userin/game/player.cpp.obj	7954c8553e6b978a
+3	746	7137561917173872	CMakeFiles/glassy_bridge_g.dir/main.cpp.obj	e808cc58cc017cd4
+746	880	7137561918404902	glassy_bridge_g.exe	1e4a07bdc69c90b1
