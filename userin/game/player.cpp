@@ -15,7 +15,7 @@ namespace user{
             case user::inputType::A_JUMP_RIGHT:
 
                 m_currPoint.glassPairNumber += 1;
-                m_currPoint.which = gb::GlassPair::WhichGlass::first;
+                m_currPoint.which = gb::GlassPair::WhichGlass::second;
                 break;
 
             case user::inputType::D_JUMP_LEFT:
@@ -51,8 +51,10 @@ namespace user{
                     out<<index<<"<-"<<"0|0"<<"|_|"<<std::endl;
                 else
                     out<<index<<"<-"<<"|_|"<<"0|0"<<std::endl;
+
+            }else {
+                out << index << "<-" << "|_|" << "|_|" << std::endl;
             }
-            out<<index<<"<-"<<"|_|"<<"|_|"<<std::endl;
         }
 
         out<<"lives: ";
@@ -62,5 +64,9 @@ namespace user{
 
         out<<std::endl;
         return out;
+    }
+
+    void Player::reset() {
+        m_currPoint.glassPairNumber = -1;
     }
 }

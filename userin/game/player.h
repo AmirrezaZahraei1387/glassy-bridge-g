@@ -26,6 +26,7 @@ namespace user{
 
         void move(user::inputType input);
         Status check();
+        void reset();
         friend std::ostream& operator<< (std::ostream& out, Player& player);
 
         friend class gb::Bridge;
