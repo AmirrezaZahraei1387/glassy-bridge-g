@@ -11,20 +11,21 @@
 
 
 namespace gb {
-    struct PointBridge{
-        int glassPairNumber{};
-        GlassPair::WhichGlass which{};
-    };
 
     class Bridge {
 
     public:
 
+        struct PointBridge{
+            int glassPairNumber{};
+            GlassPair::WhichGlass which{};
+        };
+
         Bridge() = default;
-        GlassPair::GlassType checkGlass();
+        GlassPair::GlassType checkGlass(PointBridge& pointBridge);
 
     private:
-        std::array<GlassPair, info::BRIDGE_SIZE_LENGTH> bridge{
+        std::array<GlassPair, info::BRIDGE_SIZE_LENGTH> m_bridge{
             GlassPair{}, GlassPair{},GlassPair{}, GlassPair{}, GlassPair{},
             GlassPair{}, GlassPair{},GlassPair{}, GlassPair{}, GlassPair{}
         };

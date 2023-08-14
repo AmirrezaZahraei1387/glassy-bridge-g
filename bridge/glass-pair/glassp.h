@@ -12,6 +12,7 @@ namespace gb {
 
     class GlassPair {
     public:
+
         enum class WhichGlass{
             first,
             second,
@@ -24,15 +25,18 @@ namespace gb {
             MAX,
         };
 
+        using GlassPairT = std::pair<GlassType, GlassType>;
+
         GlassPair() {
             shuffle();
         }
 
         friend std::ostream& operator<<(std::ostream& out, GlassPair&);
+        [[nodiscard]] GlassPairT& getGP();
 
     private:
         void shuffle();
-        std::pair<GlassType, GlassType> m_gp{};
+        GlassPairT m_gp{};
     };
 
 }

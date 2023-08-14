@@ -20,4 +20,8 @@ namespace gb{
         else
             m_gp.second = GlassType::STRONG;
     }
+
+    GlassPair::GlassPairT &GlassPair::getGP(){
+        return m_gp;
+    }
 }
