@@ -1,6 +1,7 @@
 //
 // Created by KAVOSH on 8/14/2023.
 //
+#include "../../info.h"
 #include "../../bridge/glass-pair/glassp.h"
 #include "../in/userin.h"
 #include "player.h"
@@ -40,5 +41,26 @@ namespace user{
         }
 
         return Status::PASS;
+    }
+
+    std::ostream &operator<<(std::ostream &out, Player &player) {
+
+        for(int index{info::BRIDGE_SIZE_LENGTH - 1}; index>=0; --index){
+            if(index == player.m_currPoint.glassPairNumber){
+                if(player.m_currPoint.which == gb::GlassPair::WhichGlass::first)
+                    out<<index<<"<-"<<"0|0"<<"|_|"<<std::endl;
+                else
+                    out<<index<<"<-"<<"|_|"<<"0|0"<<std::endl;
+            }
+            out<<index<<"<-"<<"|_|"<<"|_|"<<std::endl;
+        }
+
+        out<<"lives: ";
+        for (int index{0}; index < player.m_live; ++index) {
+            out << "<3" << ' ';
+        }
+
+        out<<std::endl;
+        return out;
     }
 }
